@@ -15,7 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EF016385-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{29CCDA0B-1B91-4490-9058-08FE19947A3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Domain", "KakaoTicket.TicketManagement.Domain\KakaoTicket.TicketManagement.Domain.csproj", "{730C53FD-8194-46BF-A685-D09909CFE4C9}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{730C53FD-8194-46BF-A685-D09909CFE4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{730C53FD-8194-46BF-A685-D09909CFE4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730C53FD-8194-46BF-A685-D09909CFE4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{730C53FD-8194-46BF-A685-D09909CFE4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -24,6 +36,7 @@ Global
 		{C8B8C8C4-2035-4EB9-A855-B3C4B5F68C3D} = {9FE5BF07-D76E-4F6A-B96A-5C1578DF743A}
 		{EF016385-141D-4C6A-8D7F-BE78F8506F17} = {9FE5BF07-D76E-4F6A-B96A-5C1578DF743A}
 		{29CCDA0B-1B91-4490-9058-08FE19947A3D} = {9FE5BF07-D76E-4F6A-B96A-5C1578DF743A}
+		{730C53FD-8194-46BF-A685-D09909CFE4C9} = {EF016385-141D-4C6A-8D7F-BE78F8506F17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C029C97-075D-41FE-A45A-983936C20274}
