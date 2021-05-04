@@ -1,13 +1,9 @@
-﻿using KakaoTicket.TicketManagement.Domain.Common;
+﻿using KakaoTicket.TicketManagement.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace KakaoTicket.TicketManagement.Domain.Entities
+namespace KakaoTicket.TicketManagement.Application.Features.Events
 {
-    public class Event : AuditableEntity
+    public class EventDetailVm
     {
         public Guid EventId { get; set; }
         public string Name { get; set; }
@@ -17,6 +13,6 @@ namespace KakaoTicket.TicketManagement.Domain.Entities
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public Guid CategoryId { get; set; }
-        public Category Category { get; set; }
+        public CategoryDto Category { get; set; }
     }
 }
