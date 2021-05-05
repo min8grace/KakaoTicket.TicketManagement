@@ -18,7 +18,7 @@ namespace KakaoTicket.TicketManagement.Application.Features.Categories.Queries.G
         public GetCategoriesListWithEventsQueryHandler(IMapper mapper, ICategoryRepository categoryRepository)
         {
             _mapper = mapper;
-            _categoryRepository = categoryRepository;
+            _categoryRepository = categoryRepository ;
         }
 
         public async Task<List<CategoryEventListVm>> Handle(GetCategoriesListWithEventsQuery request, CancellationToken cancellationToken)

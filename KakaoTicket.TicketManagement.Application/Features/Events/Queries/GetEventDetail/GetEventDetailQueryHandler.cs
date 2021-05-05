@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using KakaoTicket.TicketManagement.Application.Contracts.Persistence;
+using KakaoTicket.TicketManagement.Application.Exceptions;
 using KakaoTicket.TicketManagement.Domain.Entities;
 using MediatR;
 using System;
@@ -33,7 +34,7 @@ namespace KakaoTicket.TicketManagement.Application.Features.Events.Queries.GetEv
 
             if (category == null)
             {
-                //throw new NotFoundException(nameof(Event), request.Id);
+                throw new NotFoundException(nameof(Event), request.Id);
             }
             eventDetailDto.Category = _mapper.Map<CategoryDto>(category);
 

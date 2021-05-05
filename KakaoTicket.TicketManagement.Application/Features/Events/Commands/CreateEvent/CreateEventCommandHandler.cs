@@ -3,9 +3,6 @@ using KakaoTicket.TicketManagement.Application.Contracts.Persistence;
 using KakaoTicket.TicketManagement.Domain.Entities;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,6 +19,12 @@ namespace KakaoTicket.TicketManagement.Application.Features.Events.Commands.Crea
         }
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
+            var validator = new CreateEventCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+
+            if (validationResult.Errors.Count > 0)
+                throw new Exceptions.ValidationException(validationResult);
+
             var @event = _mapper.Map<Event>(request);
             @event = await _eventRepository.AddAsync(@event);
 

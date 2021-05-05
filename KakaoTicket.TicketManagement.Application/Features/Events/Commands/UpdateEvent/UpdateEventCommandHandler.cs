@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using KakaoTicket.TicketManagement.Application.Contracts.Persistence;
+using KakaoTicket.TicketManagement.Application.Exceptions;
 using KakaoTicket.TicketManagement.Domain.Entities;
 using MediatR;
 using System.Threading;
@@ -21,7 +22,18 @@ namespace KakaoTicket.TicketManagement.Application.Features.Events.Commands.Upda
         public async Task<Unit> Handle(UpdateEventCommand request, CancellationToken cancellationToken)
         {
 
-            var eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);          
+            var eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
+
+            if (eventToUpdate == null)
+            {
+                throw new NotFoundException(nameof(Event), request.EventId);
+            }
+
+            var validator = new UpdateEventCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+
+            if (validationResult.Errors.Count > 0)
+                throw new ValidationException(validationResult);
 
             _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
 
