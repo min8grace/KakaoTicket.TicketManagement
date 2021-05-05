@@ -1,4 +1,5 @@
-﻿using KakaoTicket.TicketManagement.Domain.Common;
+﻿using KakaoTicket.TicketManagement.Application.Contracts;
+using KakaoTicket.TicketManagement.Domain.Common;
 using KakaoTicket.TicketManagement.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,11 +8,19 @@ using System.Threading.Tasks;
 
 namespace KakaoTicket.TicketManagement.Persistence
 {
-    public class KakaoTicketDbContext: DbContext
+    public class KakaoTicketDbContext : DbContext
     {
+        private readonly ILoggedInUserService _loggedInUserService;
+
         public KakaoTicketDbContext(DbContextOptions<KakaoTicketDbContext> options)
            : base(options)
         {
+        }
+
+        public KakaoTicketDbContext(DbContextOptions<KakaoTicketDbContext> options, ILoggedInUserService loggedInUserService)
+             : base(options)
+        {
+            _loggedInUserService = loggedInUserService;
         }
 
         public DbSet<Event> Events { get; set; }

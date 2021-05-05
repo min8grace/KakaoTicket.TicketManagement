@@ -1,4 +1,6 @@
+using KakaoTicket.TicketManagement.Api.Services;
 using KakaoTicket.TicketManagement.Application;
+using KakaoTicket.TicketManagement.Application.Contracts;
 using KakaoTicket.TicketManagement.Infrastructure;
 using KakaoTicket.TicketManagement.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +34,8 @@ namespace KakaoTicket.TicketManagement.Api
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
             services.AddPersistenceServices(Configuration);
+
+            services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
