@@ -16,13 +16,9 @@
 
   <ItemGroup>
     <Folder Include="Features\Categories\Commands\CreateCategories\" />
-    <Folder Include="Features\Categories\Queries\GetCategoriesList\" />
-    <Folder Include="Features\Categories\Queries\GetCategoriesListWithEvents\" />
     <Folder Include="Features\Events\Commands\CreateEvent\" />
     <Folder Include="Features\Events\Commands\DeleteEvent\" />
     <Folder Include="Features\Events\Commands\UpdateEvent\" />
-    <Folder Include="Features\Events\Queries\GetEventDetail\" />
-    <Folder Include="Features\Events\Queries\GetEventsList\" />
     <Folder Include="Features\Orders\GetOrdersForMonth\" />
   </ItemGroup>
 

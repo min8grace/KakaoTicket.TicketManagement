@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace KakaoTicket.TicketManagement.Application.Features.Events
+namespace KakaoTicket.TicketManagement.Application.Features.Events.Queries.GetEventList
 {
     public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, List<EventListVm>>
     {

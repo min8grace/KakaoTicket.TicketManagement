@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KakaoTicket.TicketManagement.Application.Features.Events
+namespace KakaoTicket.TicketManagement.Application.Features.Events.Queries.GetEventDetail
 {
     public class CategoryDto
     {
