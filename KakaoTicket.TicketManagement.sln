@@ -15,15 +15,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EF016385-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{29CCDA0B-1B91-4490-9058-08FE19947A3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Domain", "KakaoTicket.TicketManagement.Domain\KakaoTicket.TicketManagement.Domain.csproj", "{730C53FD-8194-46BF-A685-D09909CFE4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KakaoTicket.TicketManagement.Domain", "KakaoTicket.TicketManagement.Domain\KakaoTicket.TicketManagement.Domain.csproj", "{730C53FD-8194-46BF-A685-D09909CFE4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Application", "KakaoTicket.TicketManagement.Application\KakaoTicket.TicketManagement.Application.csproj", "{A703235C-7441-4C5D-9C0F-8CA8DF07A6D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KakaoTicket.TicketManagement.Application", "KakaoTicket.TicketManagement.Application\KakaoTicket.TicketManagement.Application.csproj", "{A703235C-7441-4C5D-9C0F-8CA8DF07A6D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Persistence", "KakaoTicket.TicketManagement.Persistence\KakaoTicket.TicketManagement.Persistence.csproj", "{21A478DA-A0BF-456E-8FDF-A50ABF7A5CAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KakaoTicket.TicketManagement.Persistence", "KakaoTicket.TicketManagement.Persistence\KakaoTicket.TicketManagement.Persistence.csproj", "{21A478DA-A0BF-456E-8FDF-A50ABF7A5CAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Infrastructure", "KakaoTicket.TicketManagement.Infrastructure\KakaoTicket.TicketManagement.Infrastructure.csproj", "{AC32CE8D-C5A0-4E1B-973A-144B72AA07CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KakaoTicket.TicketManagement.Infrastructure", "KakaoTicket.TicketManagement.Infrastructure\KakaoTicket.TicketManagement.Infrastructure.csproj", "{AC32CE8D-C5A0-4E1B-973A-144B72AA07CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Api", "KakaoTicket.TicketManagement.Api\KakaoTicket.TicketManagement.Api.csproj", "{43E2CBCA-3722-440C-A189-6255A7D3BBF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KakaoTicket.TicketManagement.Api", "KakaoTicket.TicketManagement.Api\KakaoTicket.TicketManagement.Api.csproj", "{43E2CBCA-3722-440C-A189-6255A7D3BBF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.Api_IntegrationTests", "KakaoTicket.TicketManagement.Api_IntegrationTests\KakaoTicket.TicketManagement.Api_IntegrationTests.csproj", "{A6ED7BF6-00D3-475C-B16C-6A8822D66424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.ApplicationUnitTests", "KakaoTicket.TicketManagement.ApplicationUnitTesta\KakaoTicket.TicketManagement.ApplicationUnitTests.csproj", "{C54DDA75-5139-43A3-A25E-99A29193E9CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTicket.TicketManagement.PersistenceTests", "KakaoTicket.TicketManagement.PersistenceTests\KakaoTicket.TicketManagement.PersistenceTests.csproj", "{CC91632A-9861-435D-9E04-4E4E03CE48E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{43E2CBCA-3722-440C-A189-6255A7D3BBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43E2CBCA-3722-440C-A189-6255A7D3BBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43E2CBCA-3722-440C-A189-6255A7D3BBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6ED7BF6-00D3-475C-B16C-6A8822D66424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6ED7BF6-00D3-475C-B16C-6A8822D66424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6ED7BF6-00D3-475C-B16C-6A8822D66424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6ED7BF6-00D3-475C-B16C-6A8822D66424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54DDA75-5139-43A3-A25E-99A29193E9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54DDA75-5139-43A3-A25E-99A29193E9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54DDA75-5139-43A3-A25E-99A29193E9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54DDA75-5139-43A3-A25E-99A29193E9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC91632A-9861-435D-9E04-4E4E03CE48E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC91632A-9861-435D-9E04-4E4E03CE48E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC91632A-9861-435D-9E04-4E4E03CE48E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC91632A-9861-435D-9E04-4E4E03CE48E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +83,9 @@ Global
 		{21A478DA-A0BF-456E-8FDF-A50ABF7A5CAD} = {29CCDA0B-1B91-4490-9058-08FE19947A3D}
 		{AC32CE8D-C5A0-4E1B-973A-144B72AA07CB} = {29CCDA0B-1B91-4490-9058-08FE19947A3D}
 		{43E2CBCA-3722-440C-A189-6255A7D3BBF7} = {AED43D11-7E2B-44C9-8EE1-EE547435D628}
+		{A6ED7BF6-00D3-475C-B16C-6A8822D66424} = {F32C4AD3-4BA5-4D13-8AC6-F1EFE249F528}
+		{C54DDA75-5139-43A3-A25E-99A29193E9CE} = {F32C4AD3-4BA5-4D13-8AC6-F1EFE249F528}
+		{CC91632A-9861-435D-9E04-4E4E03CE48E6} = {F32C4AD3-4BA5-4D13-8AC6-F1EFE249F528}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C029C97-075D-41FE-A45A-983936C20274}
