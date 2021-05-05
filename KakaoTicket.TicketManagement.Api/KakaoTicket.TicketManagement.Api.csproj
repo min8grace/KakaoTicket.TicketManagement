@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,10 +17,6 @@
     <ProjectReference Include="..\KakaoTicket.TicketManagement.Application\KakaoTicket.TicketManagement.Application.csproj" />
     <ProjectReference Include="..\KakaoTicket.TicketManagement.Infrastructure\KakaoTicket.TicketManagement.Infrastructure.csproj" />
     <ProjectReference Include="..\KakaoTicket.TicketManagement.Persistence\KakaoTicket.TicketManagement.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
