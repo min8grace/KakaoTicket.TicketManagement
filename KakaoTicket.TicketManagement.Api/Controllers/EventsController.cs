@@ -3,6 +3,7 @@ using KakaoTicket.TicketManagement.Application.Features.Events.Commands.DeleteEv
 using KakaoTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent;
 using KakaoTicket.TicketManagement.Application.Features.Events.Queries.GetEventDetail;
 using KakaoTicket.TicketManagement.Application.Features.Events.Queries.GetEventList;
+using KakaoTicket.TicketManagement.Application.Features.Events.Queries.GetEventsExport;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -67,5 +68,12 @@ namespace KakaoTicket.TicketManagement.Api.Controllers
             return NoContent();
         }
 
+        [HttpGet("export", Name = "ExportEvents")]
+        public async Task<FileResult> ExportEvents()
+        {
+            var fileDto = await _mediator.Send(new GetEventsExportQuery());
+
+            return File(fileDto.Data, fileDto.ContentType, fileDto.EventExportFileName);
+        }
     }
 }
