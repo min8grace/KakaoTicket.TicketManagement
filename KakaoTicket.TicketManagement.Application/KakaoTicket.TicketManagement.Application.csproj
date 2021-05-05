@@ -16,9 +16,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Categories\Commands\CreateCategories\" />
-    <Folder Include="Features\Events\Commands\CreateEvent\" />
-    <Folder Include="Features\Events\Commands\DeleteEvent\" />
-    <Folder Include="Features\Events\Commands\UpdateEvent\" />
     <Folder Include="Features\Orders\GetOrdersForMonth\" />
   </ItemGroup>
 
