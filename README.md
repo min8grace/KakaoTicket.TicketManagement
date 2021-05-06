@@ -27,6 +27,6 @@
    - XUnit
    - Middleware Pipeline Behavior(validation, logging)
    - Logging, SeriLog
-   - NswagStudio
+   - NSwagStudio
    - JWT token
 
