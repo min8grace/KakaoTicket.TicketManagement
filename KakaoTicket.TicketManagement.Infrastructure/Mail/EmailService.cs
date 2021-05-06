@@ -1,8 +1,10 @@
 ﻿using KakaoTicket.TicketManagement.Application.Contracts.Infrastructure;
 using KakaoTicket.TicketManagement.Application.Models.Mail;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace KakaoTicket.TicketManagement.Infrastructure.Mail
@@ -10,10 +12,12 @@ namespace KakaoTicket.TicketManagement.Infrastructure.Mail
     public class EmailService : IEmailService
     {
         public EmailSettings _emailSettings { get; }
+        public ILogger<EmailService> _logger { get; set; }
 
-        public EmailService(IOptions<EmailSettings> mailSettings)
+        public EmailService(IOptions<EmailSettings> mailSettings, ILogger<EmailService> logger)
         {
             _emailSettings = mailSettings.Value;
+            _logger = logger;
         }
 
         public async Task<bool> SendEmail(Email email)
@@ -32,7 +36,8 @@ namespace KakaoTicket.TicketManagement.Infrastructure.Mail
 
             var sendGridMessage = MailHelper.CreateSingleEmail(from, to, subject, emailBody, emailBody);
             var response = await client.SendEmailAsync(sendGridMessage);
-            
+
+            _logger.LogInformation("Email sent");
 
             if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.OK)
                 return true;

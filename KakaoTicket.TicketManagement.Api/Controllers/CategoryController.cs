@@ -20,7 +20,7 @@ namespace KakaoTicket.TicketManagement.Api.Controllers
         {
             _mediator = mediator;
         }
-
+        [Authorize]
         [HttpGet("all", Name = "GetAllCategories")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()
@@ -28,7 +28,7 @@ namespace KakaoTicket.TicketManagement.Api.Controllers
             var dtos = await _mediator.Send(new GetCategoriesListQuery());
             return Ok(dtos);
         }
-
+        [Authorize]
         [HttpGet("allwithevents", Name = "GetCategoriesWithEvents")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -38,7 +38,7 @@ namespace KakaoTicket.TicketManagement.Api.Controllers
 
             var dtos = await _mediator.Send(getCategoriesListWithEventsQuery);
             return Ok(dtos);
-        }
+        } 
 
         [HttpPost(Name = "AddCategory")]
         public async Task<ActionResult<CreateCategoryCommandResponse>> Create([FromBody] CreateCategoryCommand createCategoryCommand)
