@@ -6,3 +6,13 @@
 
 <br />
 
+<AuthorizeView>
+    <Authorized>
+        <button @onclick="Logout">Logout</button>
+    </Authorized>
+    <NotAuthorized>
+        <button @onclick="NavigateToLogin">Click here to log in</button>
+        <br />
+        <button @onclick="NavigateToRegister">Click here to register</button>
+    </NotAuthorized>
+</AuthorizeView>

@@ -1,6 +1,8 @@
 using Blazored.LocalStorage;
+using KakaoTicket.TicketManagement.App.Auth;
 using KakaoTicket.TicketManagement.App.Contracts;
 using KakaoTicket.TicketManagement.App.Services;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +26,8 @@ namespace KakaoTicket.TicketManagement.App
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
             builder.Services.AddBlazoredLocalStorage();
 
+            builder.Services.AddAuthorizationCore();
+            builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             builder.Services.AddSingleton(new HttpClient
             {
@@ -33,6 +37,7 @@ namespace KakaoTicket.TicketManagement.App
             builder.Services.AddScoped<IEventDataService, EventDataService>();
             builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
             builder.Services.AddScoped<IOrderDataService, OrderDataService>();
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             await builder.Build().RunAsync();
         }

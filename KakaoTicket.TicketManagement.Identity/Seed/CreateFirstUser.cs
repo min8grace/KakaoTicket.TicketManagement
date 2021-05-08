@@ -20,7 +20,7 @@ namespace KakaoTicket.TicketManagement.Identity.Seed
             var user = await userManager.FindByEmailAsync(applicationUser.Email);
             if (user == null)
             {
-                await userManager.CreateAsync(applicationUser, "Johson&01?");
+                await userManager.CreateAsync(applicationUser, "password123?");
             }
         }
     }
