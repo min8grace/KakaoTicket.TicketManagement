@@ -19,6 +19,7 @@
    - FluentValidation
    - CustomerException
    - Entity Framework Core
+   - Dependency Injection
    - Email Service, SendGrid
    - Exporting CSV Files, CsvHelper
    - Swagger
