@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using KakaoTicket.TicketManagement.App.Contracts;
 using KakaoTicket.TicketManagement.App.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,8 +21,14 @@ namespace KakaoTicket.TicketManagement.App
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:44306"));
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            builder.Services.AddBlazoredLocalStorage();
+
+
+            builder.Services.AddSingleton(new HttpClient
+            {
+                BaseAddress = new Uri("https://localhost:44306")
+            }); builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:44306"));
 
             builder.Services.AddScoped<IEventDataService, EventDataService>();
             builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();

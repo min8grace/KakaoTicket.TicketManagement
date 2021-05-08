@@ -28,18 +28,21 @@ namespace KakaoTicket.TicketManagement.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            AddSwagger(services);
+
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
             services.AddPersistenceServices(Configuration);
             services.AddIdentityServices(Configuration);
+
             services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 
             services.AddControllers();
-            AddSwagger(services); 
 
             services.AddCors(options =>
             {
-                options.AddPolicy("open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+                options.AddDefaultPolicy(ApplicationBuilder => ApplicationBuilder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+                //options.AddPolicy("open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
         }
 
@@ -104,9 +107,10 @@ namespace KakaoTicket.TicketManagement.Api
 
             app.UseRouting();
             app.UseAuthentication();
+
             app.UseCustomExceptionHandler();
 
-            app.UseCors("Open");
+            app.UseCors();
 
 
             app.UseAuthorization();

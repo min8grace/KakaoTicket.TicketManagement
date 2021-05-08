@@ -12,7 +12,7 @@ namespace KakaoTicket.TicketManagement.Api
 {
     public class Program
     {
-        public async static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             var config = new ConfigurationBuilder()
               .AddJsonFile("appsettings.json")
