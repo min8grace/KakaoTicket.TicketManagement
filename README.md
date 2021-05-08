@@ -31,3 +31,4 @@
    - NSwagStudio
    - JWT token
 
+Please, do the add-migration and database-update for both of DbContext and IdentityDbContext to try it.
