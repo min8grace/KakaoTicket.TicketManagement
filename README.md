@@ -29,6 +29,6 @@
    - Middleware Pipeline Behavior(validation, logging)
    - Logging, SeriLog
    - NSwagStudio
-   - JWT token
+   - JWT token, Authentication
 
 Please, do the add-migration and database-update for both of DbContext and IdentityDbContext to try it.
