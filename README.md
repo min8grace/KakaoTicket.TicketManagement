@@ -1,4 +1,5 @@
 # KakaoTicket.TicketManagement
+built from scratch on my own for around 2 month to demonstrate and use the tech skill below
 
 1. Clean Architecture - ASP.NET Core 5.0 (WebApi & Blazor)
    - Domain Layer
